@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      >
+
+    <ui:composition template="./login_template.xhtml">
+        <ui:define name="content">
+            
+            <h:form styleClass="formulario_login">
+
+
+                    <h:panelGrid columns="2" frame="1" cellpadding="5">
+                        <h:outputLabel value="Usuário:" style="font-weight:bold" />
+                        <h:inputText a:placeHolder="Digite o usuário" id="nomeTxt"  binding="#{user_name_form}" />
+
+                        <h:outputLabel value="Senha:" style="font-weight:bold" />
+                        <h:inputSecret a:placeHolder="Digite a senha" id="senhaTxt" binding="#{password_form}"/>
+
+                        <h:commandButton
+                            value="Login" 
+                            action="#{loginBeanCrt.login_on_digi(user_name_form.value,password_form.value,'list_test')}"
+                            />
+                            
+                    </h:panelGrid>
+
+                
+
+            </h:form>
+            
+        </ui:define>
+    </ui:composition>
+
+</html>
