@@ -65,13 +65,13 @@ public class userDao {
             while (isScanner.hasNextLine()) {
                 buf.append(isScanner.nextLine() + "\n");
             }
-            String responseContent = buf.toString();
+            //String responseContent = buf.toString();
 
             // add line returns between tags to make it a bit more readable
-            responseContent = responseContent.replaceAll("><", ">\n<");
+            //responseContent = responseContent.replaceAll("><", ">\n<");
 
             // Output response to standard out
-            System.out.println(responseContent);
+            //System.out.println(responseContent);
             bo_return = true;
         } catch (Exception e) {
             // Print any exceptions that occur

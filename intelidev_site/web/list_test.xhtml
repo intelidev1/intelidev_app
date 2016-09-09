@@ -1,23 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        Hello from Facelets
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      >
 
-        <h:form styleClass="formulario_login">
+    <ui:composition template="./login_template.xhtml">
+        <ui:define name="content">
 
+            <h:form>
+                <h:inputHidden value="#{dadosBeanCrt.set_list_dados(loginBeanCrt.usuario)}" />
+            </h:form>
+            
+            <h:form>
+                <h:dataTable binding="#{table}"  value="#{dadosBeanCrt.list_dados}" var="item">
+                    <h:column>
+                        <!-- column header -->
+                        <f:facet name="header">Date</f:facet>
+                        <!-- row record -->
+                        <h:outputText value="#{dadosBeanCrt.list_dados[table.rowIndex].timestamp}" />
+                    </h:column>                 
 
-            <h:commandButton  
-                value="Logout" 
-                onclick="#{loginBeanCrt.logout()}"/>
+                    <h:column>
+                        <!-- column header -->
+                        <f:facet name="header">Value</f:facet>
+                        <!-- row record -->
+                        <h:outputText value="#{dadosBeanCrt.list_dados[table.rowIndex].value}" />
+                    </h:column>
 
+                </h:dataTable>
+            </h:form>
+        </ui:define>
+    </ui:composition>
 
-
-        </h:form>        
-    </h:body>
 </html>
-
