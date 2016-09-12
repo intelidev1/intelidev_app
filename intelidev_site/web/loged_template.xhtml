@@ -8,13 +8,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <title>Intelidev</title>
+        <title>Intelidev - Monitor System</title>
     </h:head>
 
     <h:body>
 
         <div id="top">
-            <ui:insert name="top">Intelidev</ui:insert>
+            <ui:insert name="top">Intelidev
+                <h:form styleClass="formulario_login">
+                    <h:commandButton  
+                        value="Logout" 
+                        action="#{loginBeanCrt.logout()}"/>
+                </h:form> 
+
+            </ui:insert>
         </div>
 
         <div id="content" class="center_content">
