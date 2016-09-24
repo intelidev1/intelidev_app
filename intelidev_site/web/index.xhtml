@@ -10,26 +10,27 @@
     <ui:composition template="./login_template.xhtml">
         <ui:define name="content">
             
-            <h:form styleClass="formulario_login">
+                <h:form styleClass="modal-content">
+                    <div class="imgcontainer">
+                        <i class="fa fa-github-alt" style="font-size:64px;"></i>
+                    </div>
 
-
-                    <h:panelGrid columns="2" frame="1" cellpadding="5">
-                        <h:outputLabel value="Usuário:" style="font-weight:bold" />
+                    <div class="container">
+                        <label><b>Username</b></label>
                         <h:inputText a:placeHolder="Digite o usuário" id="nomeTxt"  binding="#{user_name_form}" />
-
-                        <h:outputLabel value="Senha:" style="font-weight:bold" />
+                      
+                        <label><b>Password</b></label>
                         <h:inputSecret a:placeHolder="Digite a senha" id="senhaTxt" binding="#{password_form}"/>
 
-                        <h:commandButton
-                            value="Login" 
-                            action="#{loginBeanCrt.login_on_digi(user_name_form.value,password_form.value,'list_test')}"
-                            />
-                            
-                    </h:panelGrid>
+                        <h:commandButton styleClass="button" action="#{loginBeanCrt.login_on_digi(user_name_form.value,password_form.value,'list_test')}" value="Login" />
+                        <input type="checkbox" checked="checked"/> Remember me
+                    </div>
 
-                
+                    <div class="container" style="background-color:#f1f1f1">
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </h:form>
 
-            </h:form>
             
         </ui:define>
     </ui:composition>

@@ -32,6 +32,7 @@ public class LoginBean {
     }
     
     public String login_on_digi(String user,String pass, String page){ 
+        System.out.println("Usuario:" + user + "passwd:" + pass);
         if(new userDao().login_acess(user, pass)){
             usuario.setUsername(user);
             usuario.setPassword(pass);

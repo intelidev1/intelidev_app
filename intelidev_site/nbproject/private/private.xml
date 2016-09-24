@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/diogenes/intelidev/intelidev_app/intelidev_site/src/java/br/com/intelidev/entity/Dados.java</file>
-            <file>file:/home/diogenes/intelidev/intelidev_app/intelidev_site/web/index.xhtml</file>
-            <file>file:/home/diogenes/intelidev/intelidev_app/intelidev_site/src/java/br/com/intelidev/dao/DadosDao.java</file>
-            <file>file:/home/diogenes/intelidev/intelidev_app/intelidev_site/src/java/br/com/intelidev/bean/LoginBean.java</file>
-            <file>file:/home/diogenes/intelidev/intelidev_app/intelidev_site/src/java/br/com/intelidev/bean/DadosBean.java</file>
-            <file>file:/home/diogenes/intelidev/intelidev_app/intelidev_site/web/login_template.xhtml</file>
-            <file>file:/home/diogenes/intelidev/intelidev_app/intelidev_site/web/list_test.xhtml</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/src/java/br/com/intelidev/dao/userDao.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/web/list_test.xhtml</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/src/java/br/com/intelidev/bean/DadosBean.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/web/sample_data.xhtml</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/web/index.xhtml</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/web/resources/css/login_style.css</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/web/loged_template.xhtml</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/web/login_template.xhtml</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/src/java/br/com/intelidev/bean/LoginBean.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/workspace_intelidev/intelidev_app/intelidev_site/src/java/br/com/intelidev/dao/DadosDao.java</file>
         </group>
     </open-files>
 </project-private>
