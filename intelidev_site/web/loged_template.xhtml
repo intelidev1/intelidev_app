@@ -14,9 +14,12 @@
             html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         </style>
         <body class="w3-light-grey"/>
-        <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <title>Intelidev - Monitor System</title>
+        <h:outputStylesheet name="./css/skel.css"/>
+        <h:outputStylesheet name="./css/style.css"/>
+        <h:outputStylesheet name="./css/style-xlarge.css"/>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDof8gb1Ci4VSMKVzarAisrJ8hNXUdeHUM" type="text/javascript"></script>
+        <title>Intelidev - App</title>
     </h:head>
     
     <body class="w3-light-grey">
@@ -60,13 +63,12 @@
         </script>
 
 
-
-        <!-- Top container -->
-        <div class="w3-container w3-top w3-black w3-large w3-padding" style="z-index:4">
-            <button type="button" class="w3-btn" onclick="w3_open()">
-                <i class="fa fa-bars"></i> Menu
-            </button>
-            <span class="w3-right">INTELIDEV &nbsp;</span>
+        <!-- Header -->
+        <div id="header" class="skel-layers-fixed" >
+            <h1 onclick="w3_open()">
+                <i class="fa fa-bars" style="font-size:24px"/>
+                <a href="#" style="right">I N T E L I D E V</a>
+            </h1>
         </div>
 
 
@@ -92,7 +94,7 @@
             <a href="#" class="w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
             <a href="list_test.xhtml" class="w3-padding w3-blue"><i class="fa fa-dashboard"></i>  Dashboard</a>
             <a href="sample_data.xhtml" class="w3-padding"><i class="fa fa-smile-o"></i>  Example</a>
-            <a href="#" class="w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
+            <a href="site_index.xhtml" class="w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
             <a href="#" class="w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Geo</a>
             <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
             <a href="#" class="w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
@@ -108,7 +110,7 @@
         </div>
 
         <!-- !PAGE CONTENT! -->
-        <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+        <div class="w3-main" style="margin-left:300px;margin-top:10px;">
             <div id="content" class="center_content">
                 <ui:insert name="content">Content</ui:insert>
             </div>

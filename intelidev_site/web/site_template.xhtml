@@ -7,28 +7,35 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="./css/login_style.css"/>
-	    <h:outputStylesheet name="./css/skel.css"/>
+        <h:outputStylesheet name="./css/skel.css"/>
         <h:outputStylesheet name="./css/style.css"/>
         <h:outputStylesheet name="./css/style-xlarge.css"/>
-		
-        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"/>
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
-        <title>Intelidev</title>
+        <title>INTELIDEV</title>
     </h:head>
-
+    
+        
     <h:body>
-		
-		<!-- Header -->
+    
+        <!-- Header -->
         <div id="header" class="skel-layers-fixed" >
             <h1><a href="#">I N T E L I D E V</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Soluções</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><h:outputLink value="#">InteliMap</h:outputLink></li>
+                    <li><a href="app_index.xhtml" class="button special">Acessar</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
+            <ui:insert name="site_content">Content</ui:insert>
         </div>
-		
-		<!-- Footer -->
+        
+    <!-- Footer -->
         <footer id="footer">
             <div class="container">
                 <div class="row double">
@@ -74,6 +81,7 @@
             </div>
         </footer>
 
+        
     </h:body>
 
 </html>

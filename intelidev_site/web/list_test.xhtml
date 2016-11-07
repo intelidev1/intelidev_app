@@ -10,62 +10,72 @@
     <ui:composition template="./loged_template.xhtml">
         <ui:define name="content">
 
+	    <script type="text/javascript">//<![CDATA[
+                var gMap;
+
+                window.onload = function () {
+                    startMap();
+                };
+
+                function reload_map() {
+                    //alert("Teste ");
+                    //var markers_from_java = [#{mapEquipNav.string_markes}];
+                    //startMap(markers_from_java);
+                    startMap();
+                }
+
+                function startMap() {
+                    var myLatlng = new google.maps.LatLng(-30.013729, -51.209331);
+                    var mapOptions = {
+                        zoom: 15,
+                        center: myLatlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    gMap = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+                    //setMarkers(gMap, markers);
+                }
+				
+                function setMarkers(map, locations) {
+                    //var mark, i;
+                    var bounds = new google.maps.LatLngBounds();
+                    var infowindow = new google.maps.InfoWindow();
+                    var img_folder = '../resources/pics/';
+                    for (i = 0; i < locations.length; i++) {
+
+                        var image = {
+                            url: img_folder + locations[i][3],
+                            scaledSize: new google.maps.Size(48, 48) // scaled size'
+                        };
+
+                        var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+                            map: map,
+                            icon: image
+                        });
+
+                        //extend the bounds to include each marker's position
+                        bounds.extend(marker.position);
+
+                        google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+                            return function () {
+                                infowindow.setContent(locations[i][2]);
+                                infowindow.open(map, marker);
+                            };
+                        })(marker, i));
+                    }
+                    map.fitBounds(bounds);
+                }
+                //]]> 
+            </script>
+		
+            <!-- Mapa -->
+            <div id="map_canvas" class="center_content" style="height: 1000px"></div> 
+
             <h:form>
                 <h:inputHidden value="#{dadosBeanCrt.set_list_dados(loginBeanCrt.usuario)}" />
             </h:form>
-            
-                        <!-- Header -->
-            <header class="w3-container" style="padding-top:22px">
-              <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
-            </header>
-
-            <div class="w3-row-padding w3-margin-bottom">
-                <div class="w3-quarter">
-                    <div class="w3-container w3-red w3-padding-16">
-                        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-                        <div class="w3-right">
-                            <h3>52</h3>
-                        </div>
-                        <div class="w3-clear"></div>
-                        <h4>Messages</h4>
-                    </div>
-                </div>
-
-                <div class="w3-quarter">
-                    <div class="w3-container w3-blue w3-padding-16">
-                        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-                        <div class="w3-right">
-                            <h3>99</h3>
-                        </div>
-                        <div class="w3-clear"></div>
-                        <h4>Views</h4>
-                    </div>
-                </div>
-
-                <div class="w3-quarter">
-                    <div class="w3-container w3-teal w3-padding-16">
-                        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-                        <div class="w3-right">
-                            <h3>23</h3>
-                        </div>
-                        <div class="w3-clear"></div>
-                        <h4>Shares</h4>
-                    </div>
-                </div>
-
-                <div class="w3-quarter">
-                    <div class="w3-container w3-orange w3-text-white w3-padding-16">
-                        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-                        <div class="w3-right">
-                            <h3>50</h3>
-                        </div>
-                        <div class="w3-clear"></div>
-                        <h4>Users</h4>
-                    </div>
-                </div>
-            </div>
-            
-
+			
+			
         </ui:define>
     </ui:composition>
 
