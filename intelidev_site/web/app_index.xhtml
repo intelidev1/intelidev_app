@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      >
+
+    <ui:composition template="./login_template.xhtml">
+        <ui:define name="content">
+            
+                <h:form styleClass="modal-content">
+                    <div class="imgcontainer">
+                        <i class="fa fa-github-alt" style="font-size:64px;"></i>
+                    </div>
+
+                    <div class="login_container">
+                        <label><b>Username</b></label>
+                        <h:inputText a:placeHolder="Digite o usuário" id="nomeTxt" binding="#{user_name_form}" />
+                      
+                        <label><b>Password</b></label>
+                        <h:inputSecret a:placeHolder="Digite a senha" id="senhaTxt" binding="#{password_form}"/>
+
+                        <h:commandButton styleClass="button" action="#{loginBeanCrt.login_on_digi(user_name_form.value,password_form.value,'list_test')}" value="Login" />
+                        <h:selectBooleanCheckbox /> Remember me
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </h:form>
+
+            
+        </ui:define>
+    </ui:composition>
+
+</html>
